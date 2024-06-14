@@ -1,0 +1,32 @@
+:root {
+--text-color-black: #000;
+--search-color-grey: #808080;
+--text-color-dark-grey: #5b5b5b;
+--style-grey-color: #848484;
+--card-background-color: #f1f1f1;
+}
+
+
+.nav {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+} 
+
+.brand {
+    font-weight: 700;
+}
+
+.icon-brand {
+    display: flex;
+    align-items: center;
+}
+
+.icon-brand img {
+    margin-right: 10px; 
+}
+
+.header-img {
+    display: flex;
+    justify-content: center;
+}
