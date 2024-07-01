@@ -11,9 +11,6 @@
 //     console.log(a);
 // }
 
-
-
-// script.js
 let currentIndex = 0;
 
 function showSlide(index) {
@@ -81,12 +78,15 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
 
         productList.appendChild(productDiv);
+        productDiv.addEventListener('click', () => {
+            window.location.href = "bagScreen/bagScreen.html";
+        });
+
+        productList.appendChild(productDiv);
     });
-});
 
+    }); 
 
-
-// script.js
 document.querySelectorAll('.footer-menu .menu-item').forEach(item => {
     item.addEventListener('click', function() {
         document.querySelectorAll('.footer-menu .menu-item').forEach(item => {

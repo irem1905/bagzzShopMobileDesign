@@ -1,0 +1,90 @@
+:root {
+    --text-color-black: #000;
+    --background-color-white: #ffffff;
+    --search-color-grey: #808080;
+    --text-color-dark-grey: #5b5b5b;
+    --style-grey-color: #848484;
+    --card-background-color: #f1f1f1;
+    }
+
+
+.nav {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    padding: 10px;
+} 
+
+.img-information{
+    display: flex;
+    justify-content: space-between;
+}
+
+.brand {
+    font-weight: 700;
+    font-family: "Playfair Display", serif;
+}
+
+.icon-brand {
+    display: flex;
+    align-items: center;
+}
+
+.icon-brand img {
+    margin-right: 10px; 
+}
+
+.red-image {
+    width: 170px;
+    height: 155px;
+    top: 121px;
+    left: 12px;
+    gap: 0px;
+    opacity: 0px;
+}
+
+.bag-text{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.name {
+    font-weight: 600;
+    font-family: "Playfair Display", serif;
+    margin: 0;
+}
+
+.feature{
+margin: 0;
+}
+
+
+.style {
+    color: var(--style-grey-color);
+    margin: 0;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.button-one {
+    background-color: var(--text-color-black);
+    color: var(--background-color-white);
+}
+
+button {
+    /* Tarayıcı varsayılan stillerini sıfırla */
+    background-color: transparent;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    /* İstenirse cursor: pointer; eklenebilir */
+    cursor: pointer;
+    /* İstenirse text-align: inherit; eklenbilir */
+    text-align: inherit;
+}
