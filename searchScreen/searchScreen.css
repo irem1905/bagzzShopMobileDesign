@@ -1,0 +1,36 @@
+:root {
+    --text-color-black: #000;
+    --background-color-white: #ffffff;
+    --search-color-grey: #808080;
+    --text-color-dark-grey: #5b5b5b;
+    --style-grey-color: #848484;
+    --card-background-color: #f1f1f1;
+    }
+    
+
+
+    .nav {
+        display: flex;
+        align-items: center; 
+        justify-content: space-between;
+        padding: 10px;
+    } 
+    
+    .img-information{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .brand {
+        font-weight: 700;
+        font-family: "Playfair Display", serif;
+    }
+    
+    .icon-brand {
+        display: flex;
+        align-items: center;
+    }
+    
+    .icon-brand img {
+        margin-right: 10px; 
+    }

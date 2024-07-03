@@ -96,3 +96,18 @@ document.querySelectorAll('.footer-menu .menu-item').forEach(item => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.footer-menu .menu-item').forEach(item => {
+        item.addEventListener('click', function(event) {
+            event.preventDefault(); 
+
+            document.querySelectorAll('.footer-menu .menu-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            this.classList.add('active');
+
+            const target = this.getAttribute('href').substring(1);
+            window.location.href = `${target}.html`;
+        });
+    });
+});

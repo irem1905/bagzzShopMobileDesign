@@ -35,17 +35,6 @@
     justify-content: center;
 }
 
-
-/* .image-text {
-    position: absolute;
-    top: 28%;
-    left: 62%; 
-    font-size: 20px; 
-    color: var(--text-color-black);
-    background-color: var(--background-color-white); 
-    font-weight: 900;
-} */
-
 .image-text {
     font-weight: 900;
     position: absolute;
@@ -127,8 +116,8 @@
 .border-bottom-line {
     font-family: "Roboto", sans-serif;
     margin: 0;
-    border-bottom: 3px solid #000; /* 2px kalınlığında siyah çizgi */
-    padding-bottom: 5px; /* Yazı ve çizgi arasındaki boşluk */
+    border-bottom: 3px solid #000;
+    padding-bottom: 5px;
 }
 
 .slider {
@@ -152,18 +141,9 @@
     width: 100%;
 }
 
-/* .image-text {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 24px;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-} */
-
 .prev, .next {
     position: absolute;
-    top: 50%;
+    top: 14%;
     transform: translateY(-50%);
     background-color: var(--text-color-black);
     color: var(--background-color-white);
@@ -184,14 +164,6 @@
 .prev:hover, .next:hover {
     background-color: rgba(0,0,0,0.7);
 }
-
-
-
-
-/* DENEME */
-/* styles.css */
-
-
 
 .card-one {
     width: 140px;
@@ -268,7 +240,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; /* Kartlar arasındaki boşluk */
+    gap: 20px;
 }
 
 .card {
@@ -277,9 +249,9 @@ body {
     border-radius: 8px;
     padding: 20px;
     text-align: center;
-    width: 45%; /* Kartların genişliği */
+    width: 45%;
     box-sizing: border-box;
-    transition: transform 0.3s ease; /* Hover animasyonu */
+    transition: transform 0.3s ease;
 }
 
 .texts {
@@ -304,15 +276,16 @@ body {
 .footer-menu {
     position: fixed;
     bottom: 0;
-    left: 0;
-    right: 0;
+    left: 30px;
     border-radius: 35px;
-    margin-bottom: 66px;
+    margin-bottom: 9px;
+    width: 82%;
     background-color: var(--background-color-white);
     color: var(--text-color-black);
     padding: 8px;
     display: flex;
     justify-content: space-evenly;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .footer-menu .menu-item {
@@ -332,9 +305,5 @@ body {
 .footer-menu .menu-item span {
     font-size: 12px;
 }
-
-
-
-
 
 
