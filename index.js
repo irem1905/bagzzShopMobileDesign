@@ -48,50 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// document.addEventListener('DOMContentLoaded', function () {
-//     const products = [
-//         { id: 1, title: 'Artsy', img: 'images/bagzz-images/red.png', heartImg: 'images/bagzz-images/heart.png.png' },
-//         { id: 2, title: 'Berkely', img: 'images/bagzz-images/gray.png', heartImg: 'images/bagzz-images/heart.png.png' },
-//         { id: 3, title: 'Capucinus', img: 'images/bagzz-images/black.png', heartImg: 'images/bagzz-images/heart.png.png' },
-//         { id: 4, title: 'Monogram', img: 'images/bagzz-images/green.png', heartImg: 'images/bagzz-images/heart.png.png' }
-//     ];
-
-//     const productList = document.getElementById('productList');
-
-//     products.forEach(product => {
-//         const productDiv = document.createElement('div');
-//         productDiv.className = 'card';
-
-//         productDiv.innerHTML = `
-//             <div class="card-inner">
-//                 <div class="heart-right">
-//                     <i class="heart-icon far fa-heart"></i>
-//                 </div>
-//                 <div class="red-bag">
-//                     <img src="${product.img}" alt="${product.title}">
-//                 </div>
-//             </div>
-//             <div class="texts">
-//                 <p class="title">${product.title}</p>
-//                 <p class="border-bottom-line">SHOP NOW</p>
-//             </div>
-//         `;
-
-//         productList.appendChild(productDiv);
-        
-//         const heartIcon = productDiv.querySelector('.heart-icon');
-//         heartIcon.addEventListener('click', function(event) {
-//             event.stopPropagation(); // Tıklamanın card tıklama olayını tetiklemesini engelle
-//             heartIcon.classList.toggle('fas');
-//             heartIcon.classList.toggle('far');
-//         });
-
-//         productDiv.addEventListener('click', () => {
-//             window.location.href = "bagScreen/bagScreen.html";
-//         });
-//     });
-// });
-
 document.addEventListener('DOMContentLoaded', function () {
     const products = [
         { id: 1, title: 'Artsy', img: 'images/bagzz-images/red.png', heartImg: 'images/bagzz-images/heart.png.png' },
@@ -123,7 +79,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         productList.appendChild(productDiv);
         
-        // Kalp ikonu tıklama olayı
         const heartIcon = productDiv.querySelector('.heart-icon');
         heartIcon.addEventListener('click', function(event) {
             event.stopPropagation(); 
@@ -143,3 +98,25 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// const menuItems = [
+//     { href: '#home', icon: 'fas fa-home' },
+//     { href: '#search', icon: 'fas fa-search' },
+//     { href: '#heart', icon: 'fas fa-heart' },
+//     { href: '#shopping', icon: 'fas fa-shopping-basket' }
+// ];
+
+// const footerMenu = document.getElementById('footer-menu');
+
+// menuItems.forEach(item => {
+//     const button = document.createElement('button');
+//     button.className = 'menu-item';
+//     button.onclick = () => location.href = item.href;
+//     button.innerHTML = `<i class="${item.icon}"></i>`;
+//     footerMenu.appendChild(button);
+// });
+
+
+
+document.getElementById('shopping-button').addEventListener('click', function() {
+    window.location.href = 'shopping.html';
+});

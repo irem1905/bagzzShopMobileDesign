@@ -23,7 +23,6 @@
 	<title>Bagzz</title>
 	<script src="index.js" type="text/Javascript"></script>
 </head>
-
 <body>
 	<div class="container">
 		<div class="nav">
@@ -37,10 +36,7 @@
 				<img src="images/bagzz-images/boy.png" alt="user">
 			</div>
 		</div>
-
 		<div class="home active">
-
-
 			<div class="slider">
 				<div class="slides">
 					<div class="slide">
@@ -58,33 +54,24 @@
 							<div class="word">season's</div>
 							<div class="word">latest</div>
 						</div>
-
 					</div>
 				</div>
-
 				<div class="row">
 					<button class="prev" onclick="prevSlide()"><i class="fas fa-arrow-left"></i></button>
 					<button class="next" onclick="nextSlide()"><i class="fas fa-arrow-right"></i></button>
 				</div>
-
 				<div class="content">
 					<div id="productList" class="cards"></div>
 				</div>
-
-
 			</div>
 		</div>
-
 		<div class="footer-menu">
-			<a href="#home" class="menu-item"><i class="fas fa-home"></i></a>
-			<a href="#search" class="menu-item"><i class="fas fa-search"></i></a>
-			<a href="#heart" class="menu-item"><i class="fas fa-heart"></i></a>
-			<a href="#shopping" class="menu-item"><i class="fas fa-shopping-basket"></i></a>
+			<button class="menu-item" onclick="location.href='#home'"><i class="fas fa-home"></i></button>
+			<button class="menu-item" onclick="location.href='#search'"><i class="fas fa-search"></i></button>
+			<button class="menu-item" onclick="location.href='#heart'"><i class="fas fa-heart"></i></button>
+			<button class="menu-item"  id="shopping-button" onclick="location.href='#shopping'"><i class="fas fa-shopping-basket"></i></button>
 		</div>
-
-<div id="productList" class="cards"></div>
-
-
+		<div id="productList" class="cards"></div>
 </body>
 
 </html>

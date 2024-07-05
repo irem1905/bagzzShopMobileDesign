@@ -63,8 +63,9 @@ font-family: "Work Sans", sans-serif;
 
 
 .style {
-    color: var(--style-grey-color);
     margin: 0;
+    font-size: 15px;
+    color: var(--style-grey-color);
     font-family: "Work Sans", sans-serif;
 }
 

@@ -1,19 +1,18 @@
 :root {
---text-color-black: #000;
---background-color-white: #ffffff;
---search-color-grey: #808080;
---text-color-dark-grey: #5b5b5b;
---style-grey-color: #848484;
---card-background-color: #f1f1f1;
+    --text-color-black: #000;
+    --background-color-white: #ffffff;
+    --search-color-grey: #808080;
+    --text-color-dark-grey: #5b5b5b;
+    --style-grey-color: #848484;
+    --card-background-color: #f1f1f1;
 }
-
 
 .nav {
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content: space-between;
     padding: 10px;
-} 
+}
 
 .brand {
     font-weight: 700;
@@ -26,9 +25,8 @@
 }
 
 .icon-brand img {
-    margin-right: 10px; 
+    margin-right: 10px;
 }
-
 
 .header-img {
     display: flex;
@@ -39,26 +37,24 @@
     font-weight: 900;
     position: absolute;
     top: 28%;
-    font-size: 20px; 
-    left: 62%; 
+    font-size: 20px;
+    left: 62%;
     display: flex;
     flex-direction: column;
 }
 
 .word {
     color: var(--text-color-black);
-    display: inline-block; 
-    background-color: var(--background-color-white); 
-    padding: 2px 5px; 
+    display: inline-block;
+    background-color: var(--background-color-white);
+    padding: 2px 5px;
 }
-
 
 .cards {
     display: flex;
     justify-content: space-around;
     margin-top: 10px;
 }
-
 
 .texts {
     display: flex;
@@ -70,7 +66,6 @@
     text-align: right;
 }
 
-
 .card-one {
     width: 140px;
     padding: 20px;
@@ -80,7 +75,7 @@
     transition: transform 0.3s;
 }
 
-.card-two { 
+.card-two {
     width: 140px;
     padding: 20px;
     background: var(--card-background-color);
@@ -141,7 +136,8 @@
     width: 100%;
 }
 
-.prev, .next {
+.prev,
+.next {
     position: absolute;
     top: 12%;
     transform: translateY(-50%);
@@ -161,8 +157,9 @@
     right: 2px;
 }
 
-.prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.7);
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .card-one {
@@ -178,7 +175,8 @@
     transform: translateY(-5px);
 }
 
-.heart-right img, .red-bag img {
+.heart-right img,
+.red-bag img {
     max-width: 100%;
 }
 
@@ -194,14 +192,13 @@
     margin-bottom: 10px;
 }
 
-
-
 body {
     font-family: Arial, sans-serif;
     background-color: var(--background-color-white);
 }
 
-.navbar, .footer {
+.navbar,
+.footer {
     width: 100%;
     background-color: #333;
     color: white;
@@ -215,6 +212,7 @@ body {
     margin-bottom: 10px;
     cursor: pointer;
 }
+
 .product-detail {
     display: none;
     border: 1px solid #ddd;
@@ -222,10 +220,8 @@ body {
     margin-top: 10px;
 }
 
-/* DENEME */
-
-
-.navbar, .footer {
+.navbar,
+.footer {
     width: 100%;
     background-color: #333;
     color: white;
@@ -265,9 +261,9 @@ body {
 }
 
 .card:hover {
-    transform: scale(1.05); /* Hover büyütme */
+    transform: scale(1.05);
+    /* Hover büyütme */
 }
-
 
 .footer-menu {
     position: fixed;
@@ -291,6 +287,8 @@ body {
     color: var(--text-color-black);
     text-decoration: none;
     padding: 10px;
+    border: none;
+    background-color: var(--background-color-white);
 }
 
 .footer-menu .menu-item i {
@@ -309,7 +307,24 @@ body {
 }
 
 
+.footer-menu {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
 
+.menu-item {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
 
-
-
+.menu-item:hover {
+    color: #ddd;
+}
