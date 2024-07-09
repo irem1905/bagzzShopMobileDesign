@@ -130,6 +130,54 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // let currentIndex = 0;
 
 // function showSlide(index) {
@@ -223,8 +271,12 @@ document.addEventListener("DOMContentLoaded", function() {
 // });
 // });
 
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('search-button').addEventListener('click', function() {
-        window.location.href = 'searchScreen.html';
-    });
-});
+// document.addEventListener('DOMContentLoaded', function() {
+//     document.getElementById('search-button').addEventListener('click', function() {
+//         window.location.href = 'searchScreen.html';
+//     });
+// });
+
+
+
+
