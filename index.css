@@ -5,6 +5,7 @@
     --text-color-dark-grey: #5b5b5b;
     --style-grey-color: #848484;
     --card-background-color: #f1f1f1;
+    --text-squant-grey: #666666;
 }
 
 body {
@@ -27,11 +28,8 @@ body {
 
 .icon-brand {
     display: flex;
+    gap: 8px;
     align-items: center;
-}
-
-.icon-brand img {
-    margin-right: 10px;
 }
 
 .header-img {
@@ -317,4 +315,100 @@ body {
 
 .menu-item:hover {
     color: #ddd;
+}
+
+
+
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: black;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    right: -50%;
+    width: 50%;
+    height: 100%;
+    background-color: var(--card-background-color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: right 0.3s ease;
+    z-index: 1000; /* Menü diğer içeriklerin üzerinde görünmesini sağlar */
+}
+
+.menu ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.menu ul li {
+    margin: 20px 0;
+}
+
+.menu ul li a {
+    color: var(--text-color-black); /* Menü öğelerinin rengi beyaz yapıldı */
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.menu ul li a:hover {
+    text-decoration: underline;
+}
+
+.menu.open {
+    right: 0;
+}
+
+@media (min-width: 600px) {
+    .menu {
+        position: static;
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        background-color: transparent;
+    }
+
+    .menu ul {
+        display: flex;
+    }
+
+    .menu ul li {
+        margin: 0 10px;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+}
+
+.menu-close {
+    background: none;
+    border: none;
+    color: var(--text-color-black); /* Çarpı butonunun rengi beyaz yapıldı */
+    font-size: 24px;
+    position: absolute;
+    top: 10px;
+    left: 10px; /* Sol üst köşeye konumlandırıldı */
+    cursor: pointer;
+    margin-top: 16px;
 }
