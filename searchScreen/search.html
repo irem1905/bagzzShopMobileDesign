@@ -19,16 +19,35 @@
         href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="search.css">
-    <title>Bagzz</title>
-    <script src="search/search.js" type="text/Javascript"></script>
+    <title>Search</title>
+    <script src="index/index.js" type="text/javascript"></script>
+
 </head>
 
 <body>
     <div class="container">
         <div class="nav">
             <div class="icon-brand">
-                <img src="../images/bagzz-images/Group 36 (1).svg" alt="menu">
+                <header>
+                    <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                    <nav class="menu">
+                        <button class="menu-close"><i class="fas fa-times"></i></button>
+                        <ul>
+                            <li><a href="index.html">Home page</a></li>
+                            <li><a href="#">Woman</a></li>
+                            <li><a href="#">Male</a></li>
+                            <li><a href="#">Child</a></li>
+                            <li><a href="hamburgerMenu/about.html">About</a></li>
+                            <li><a href="hamburgerMenu/services.html">Services</a></li>
+                            <li><a href="hamburgerMenu/contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </header>
+                <!-- <img src="../images/bagzz-images/Group 36 (1).svg" alt="menu"> -->
                 <div class="brand">
                     <p>bagzz</p>
                 </div>
@@ -38,10 +57,17 @@
             </div>
         </div>
 
-    <button class="menu-item" id="home-button"><i class="fas fa-home"></i></button>
-    <button class="menu-item" id="search-button"><i class="fas fa-search"></i></button>
-    <button class="menu-item" id="heart-button"><i class="fas fa-heart"></i></button>
-    <button class="menu-item" id="shopping-button"><i class="fas fa-shopping-basket"></i></button>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Type here to search">
+            <button id="clearBtn">&times;</button>
+        </div>
+
+        <div class="footer-menu">
+            <button class="menu-item" id="home-button"><i class="fas fa-home"></i></button>
+            <button class="menu-item" id="search-button"><i class="fas fa-search"></i></button>
+            <button class="menu-item" id="heart-button"><i class="fas fa-heart"></i></button>
+            <button class="menu-item" id="shopping-button"><i class="fas fa-shopping-basket"></i></button>
+        </div>
     </div>
 
 

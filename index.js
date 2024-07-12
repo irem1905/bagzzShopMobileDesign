@@ -1,16 +1,5 @@
-// const pen ="pembe" 
-// if (pen !== "mavi"){
-//     console.log("kalem mavidir");
-// }
-// else if (pen== "sarı"){
-//     console.log("kalem sarı");
-// }
-// else{
-//     console.log("kalem kırmızıdır");
-//     const a= 15
-//     console.log(a);
-// }
 
+// Slider fonksiyonları
 let currentIndex = 0;
 
 function showSlide(index) {
@@ -34,21 +23,21 @@ function prevSlide() {
     showSlide(currentIndex - 1);
 }
 
+// Sayfa yüklendiğinde çalışacak fonksiyonlar
 document.addEventListener('DOMContentLoaded', () => {
+    // Slider'ı göster
     showSlide(currentIndex);
-});
 
-
-document.addEventListener('DOMContentLoaded', () => {
+    // Kart tıklama olayları
     const card = document.querySelector('.card-one');
-    
-    card.addEventListener('click', () => {
-        const url = card.getAttribute('data-url');
-        window.location.href = url;
-    });
-});
+    if (card) {
+        card.addEventListener('click', () => {
+            const url = card.getAttribute('data-url');
+            window.location.href = url;
+        });
+    }
 
-document.addEventListener('DOMContentLoaded', function () {
+    // Ürün listesi
     const products = [
         { id: 1, title: 'Artsy', img: 'images/bagzz-images/red.png', heartImg: 'images/bagzz-images/heart.png.png' },
         { id: 2, title: 'Berkely', img: 'images/bagzz-images/gray.png', heartImg: 'images/bagzz-images/heart.png.png' },
@@ -58,76 +47,138 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const productList = document.getElementById('productList');
 
-    products.forEach(product => {
-        const productDiv = document.createElement('div');
-        productDiv.className = 'card';
+    if (productList) {
+        products.forEach(product => {
+            const productDiv = document.createElement('div');
+            productDiv.className = 'card';
 
-        productDiv.innerHTML = `
-            <div class="card-inner">
-                <div class="heart-right">
-                    <i class="heart-icon far fa-heart"></i>
+            productDiv.innerHTML = `
+                <div class="card-inner">
+                    <div class="heart-right">
+                        <i class="heart-icon far fa-heart"></i>
+                    </div>
+                    <div class="red-bag">
+                        <img src="${product.img}" alt="${product.title}">
+                    </div>
                 </div>
-                <div class="red-bag">
-                    <img src="${product.img}" alt="${product.title}">
+                <div class="texts">
+                    <p class="title">${product.title}</p>
+                    <p class="border-bottom-line">SHOP NOW</p>
                 </div>
-            </div>
-            <div class="texts">
-                <p class="title">${product.title}</p>
-                <p class="border-bottom-line">SHOP NOW</p>
-            </div>
-        `;
+            `;
 
-        productList.appendChild(productDiv);
-        
-        const heartIcon = productDiv.querySelector('.heart-icon');
-        heartIcon.addEventListener('click', function(event) {
-            event.stopPropagation(); 
-            heartIcon.classList.toggle('fas');
-            heartIcon.classList.toggle('far');
-            
+            productList.appendChild(productDiv);
+
+            const heartIcon = productDiv.querySelector('.heart-icon');
+            heartIcon.addEventListener('click', function(event) {
+                event.stopPropagation();
+                heartIcon.classList.toggle('fas');
+                heartIcon.classList.toggle('far');
+
                 if (heartIcon.classList.contains('fas')) {
-                console.log(`Ürünü beğendiniz: ${product.title}`);
-            } else {
-                console.log(`Ürünü beğenmekten vazgeçtiniz: ${product.title}`);
-            }
-        });
+                    console.log(`Ürünü beğendiniz: ${product.title}`);
+                } else {
+                    console.log(`Ürünü beğenmekten vazgeçtiniz: ${product.title}`);
+                }
+            });
 
-        productDiv.addEventListener('click', () => {
-            window.location.href = "bagScreen/bagScreen.html";
-        });
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('.menu');
-    const menuClose = document.querySelector('.menu-close'); 
-
-    menuToggle.addEventListener('click', function() {
-        menu.classList.toggle('open');
-    });
-
-    if (menuClose) {
-        menuClose.addEventListener('click', function() {
-            menu.classList.remove('open');
+            productDiv.addEventListener('click', () => {
+                window.location.href = "bagScreen/bagScreen.html";
+            });
         });
     }
-});
 
-
-document.addEventListener('DOMContentLoaded', function() {
+    // Menü açma/kapama
     const menuToggle = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.menu');
     const menuClose = document.querySelector('.menu-close');
 
-    menuToggle.addEventListener('click', function() {
-        menu.classList.toggle('active');
+    if (menuToggle && menu) {
+        menuToggle.addEventListener('click', function() {
+            menu.classList.toggle('open');
+        });
+
+        if (menuClose) {
+            menuClose.addEventListener('click', function() {
+                menu.classList.remove('open');
+            });
+        }
+    }
+
+    // Menü butonları
+    document.getElementById("home-button").addEventListener("click", function() {
+        window.location.href = "ana_sayfa.html";
     });
 
-    menuClose.addEventListener('click', function() {
-        menu.classList.remove('active');
+    document.getElementById("search-button").addEventListener("click", function() {
+        window.location.href = "searchScreen/search.html"; 
+    });
+
+    document.getElementById("heart-button").addEventListener("click", function() {
+        window.location.href = "likeScreen/like.html";
+    });
+
+    document.getElementById("shopping-button").addEventListener("click", function() {
+        window.location.href = "shoppingScreen/shopping.html";
     });
 });
+
+document.getElementById('clearBtn').addEventListener('click', function() {
+    document.getElementById('search').value = '';
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     const menuToggle = document.querySelector('.menu-toggle');
+//     const menu = document.querySelector('.menu');
+//     const menuClose = document.querySelector('.menu-close');
+
+//     menuToggle.addEventListener('click', function() {
+//         menu.classList.toggle('active');
+//     });
+
+//     menuClose.addEventListener('click', function() {
+//         menu.classList.remove('active');
+//     });
+// });
 
 
 

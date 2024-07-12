@@ -6,6 +6,8 @@
     --style-grey-color: #848484;
     --card-background-color: #f1f1f1;
     --text-squant-grey: #666666;
+    --line-red: #900a0a;
+    --hover-red: #7a0000;
 }
 
 body {
@@ -318,9 +320,6 @@ body {
 }
 
 
-
-
-
 header {
     display: flex;
     justify-content: space-between;
@@ -365,7 +364,7 @@ header {
 }
 
 .menu ul li a {
-    color: var(--text-color-black); /* Menü öğelerinin rengi beyaz yapıldı */
+    color: var(--line-red);
     text-decoration: none;
     font-size: 18px;
 }
@@ -404,11 +403,12 @@ header {
 .menu-close {
     background: none;
     border: none;
-    color: var(--text-color-black); /* Çarpı butonunun rengi beyaz yapıldı */
+    color: var(--line-red); 
     font-size: 24px;
     position: absolute;
     top: 10px;
-    left: 10px; /* Sol üst köşeye konumlandırıldı */
+    left: 10px;
     cursor: pointer;
     margin-top: 16px;
 }
+

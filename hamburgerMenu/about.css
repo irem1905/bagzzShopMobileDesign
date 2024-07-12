@@ -7,24 +7,25 @@
     --card-background-color: #f1f1f1;
     --text-squant-grey: #666666;
     --line-red: #900a0a;
+    --hover-red: #7a0000;
 }
 
 .container {
     padding: 20px;
 }
 
-.container > div {
+.container>div {
     margin-bottom: 35px;
 }
 
 .nav {
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content: space-between;
     padding: 10px;
-} 
+}
 
-.img-information{
+.img-information {
     display: flex;
     justify-content: space-between;
 }
@@ -40,7 +41,7 @@
 }
 
 .icon-brand img {
-    margin-right: 10px; 
+    margin-right: 10px;
 }
 
 .title {
@@ -81,7 +82,7 @@
     left: 0;
 } */
 
-.subtitle{
+.subtitle {
     padding: 0 7%;
     color: var(--text-squant-grey);
 }
@@ -91,4 +92,16 @@
     font-family: "Work Sans", sans-serif;
     margin-top: 20px;
     padding: 0 7%;
+}
+
+#backIcon {
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    color: var(--line-red);
+    cursor: pointer;
+}
+
+#backIcon:hover {
+    color: var(--hover-red);
 }
