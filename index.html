@@ -86,8 +86,23 @@
 			<button class="menu-item" id="search-button"><i class="fas fa-search"></i></button>
 			<button class="menu-item" id="heart-button"><i class="fas fa-heart"></i></button>
 			<button class="menu-item" id="shopping-button"><i class="fas fa-shopping-basket"></i></button>
+			<div id="likedProductsList" class="cards"></div>
 		</div>
+
+		<!-- Modal for liked products -->
+		<div id="likedProductsModal" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h2 class="liked-products">Liked Products</h2>
+				<div id="likedProductsContainer" class="cards"></div>
+			</div>
+		</div>
+
 		<div id="productList" class="cards"></div>
+		<div id="likedProductsList" class="cards"></div>
+	</div>
+
+	
 </body>
 
 </html>
