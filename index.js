@@ -1,4 +1,5 @@
 
+alert('Welcome to our mobile app!');
 // Slider fonksiyonları
 let currentIndex = 0;
 
@@ -241,6 +242,3 @@ function showCartProductsModal() {
 
     modal.style.display = "block";
 }
-
-
-
