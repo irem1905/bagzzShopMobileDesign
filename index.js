@@ -1,136 +1,4 @@
 
-// // Slider fonksiyonları
-// let currentIndex = 0;
-
-// function showSlide(index) {
-//     const slides = document.querySelectorAll('.slide');
-//     if (index >= slides.length) {
-//         currentIndex = 0;
-//     } else if (index < 0) {
-//         currentIndex = slides.length - 1;
-//     } else {
-//         currentIndex = index;
-//     }
-//     const offset = -currentIndex * 100;
-//     document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
-// }
-
-// function nextSlide() {
-//     showSlide(currentIndex + 1);
-// }
-
-// function prevSlide() {
-//     showSlide(currentIndex - 1);
-// }
-
-// // Sayfa yüklendiğinde çalışacak fonksiyonlar
-// document.addEventListener('DOMContentLoaded', () => {
-//     // Slider'ı göster
-//     showSlide(currentIndex);
-
-//     // Kart tıklama olayları
-//     const card = document.querySelector('.card-one');
-//     if (card) {
-//         card.addEventListener('click', () => {
-//             const url = card.getAttribute('data-url');
-//             window.location.href = url;
-//         });
-//     }
-
-//     // Ürün listesi
-//     const products = [
-//         { id: 1, title: 'Artsy', img: 'images/bagzz-images/red.png', heartImg: 'images/bagzz-images/heart.png.png' },
-//         { id: 2, title: 'Berkely', img: 'images/bagzz-images/gray.png', heartImg: 'images/bagzz-images/heart.png.png' },
-//         { id: 3, title: 'Capucinus', img: 'images/bagzz-images/black.png', heartImg: 'images/bagzz-images/heart.png.png' },
-//         { id: 4, title: 'Monogram', img: 'images/bagzz-images/green.png', heartImg: 'images/bagzz-images/heart.png.png' }
-//     ];
-
-//     const productList = document.getElementById('productList');
-
-//     if (productList) {
-//         products.forEach(product => {
-//             const productDiv = document.createElement('div');
-//             productDiv.className = 'card';
-
-//             productDiv.innerHTML = `
-//                 <div class="card-inner">
-//                     <div class="heart-right">
-//                         <i class="heart-icon far fa-heart"></i>
-//                     </div>
-//                     <div class="red-bag">
-//                         <img src="${product.img}" alt="${product.title}">
-//                     </div>
-//                 </div>
-//                 <div class="texts">
-//                     <p class="title">${product.title}</p>
-//                     <p class="border-bottom-line">SHOP NOW</p>
-//                 </div>
-//             `;
-
-//             productList.appendChild(productDiv);
-
-//             const heartIcon = productDiv.querySelector('.heart-icon');
-//             heartIcon.addEventListener('click', function(event) {
-//                 event.stopPropagation();
-//                 heartIcon.classList.toggle('fas');
-//                 heartIcon.classList.toggle('far');
-
-//                 if (heartIcon.classList.contains('fas')) {
-//                     console.log(`Ürünü beğendiniz: ${product.title}`);
-//                 } else {
-//                     console.log(`Ürünü beğenmekten vazgeçtiniz: ${product.title}`);
-//                 }
-//             });
-
-//             productDiv.addEventListener('click', () => {
-//                 window.location.href = "bagScreen/bagScreen.html";
-//             });
-//         });
-//     }
-
-//     // Menü açma/kapama
-//     const menuToggle = document.querySelector('.menu-toggle');
-//     const menu = document.querySelector('.menu');
-//     const menuClose = document.querySelector('.menu-close');
-
-//     if (menuToggle && menu) {
-//         menuToggle.addEventListener('click', function() {
-//             menu.classList.toggle('open');
-//         });
-
-//         if (menuClose) {
-//             menuClose.addEventListener('click', function() {
-//                 menu.classList.remove('open');
-//             });
-//         }
-//     }
-
-//     // Menü butonları
-//     document.getElementById("home-button").addEventListener("click", function() {
-//         window.location.href = "ana_sayfa.html";
-//     });
-
-//     document.getElementById("search-button").addEventListener("click", function() {
-//         window.location.href = "searchScreen/search.html"; 
-//     });
-
-//     document.getElementById("heart-button").addEventListener("click", function() {
-//         window.location.href = "likeScreen/like.html";
-//     });
-
-//     document.getElementById("shopping-button").addEventListener("click", function() {
-//         window.location.href = "shoppingScreen/shopping.html";
-//     });
-// });
-
-// document.getElementById('clearBtn').addEventListener('click', function() {
-//     document.getElementById('search').value = '';
-// });
-
-
-
-
-
 // Slider fonksiyonları
 let currentIndex = 0;
 
@@ -156,20 +24,12 @@ function prevSlide() {
 }
 
 let likedProducts = [];
+let cartProducts = [];
 
-// Sayfa yüklendiğinde çalışacak fonksiyonlar
+// Sayfa yüklendiğinde çalışacak fonksiyon
 document.addEventListener('DOMContentLoaded', () => {
     // Slider'ı göster
     showSlide(currentIndex);
-
-    // Kart tıklama olayları
-    const card = document.querySelector('.card-one');
-    if (card) {
-        card.addEventListener('click', () => {
-            const url = card.getAttribute('data-url');
-            window.location.href = url;
-        });
-    }
 
     // Ürün listesi
     const products = [
@@ -197,13 +57,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <div class="texts">
                     <p class="title">${product.title}</p>
-                    <p class="border-bottom-line">SHOP NOW</p>
+                    <button class="shop-now-button">SHOP NOW</button> 
                 </div>
             `;
 
             productList.appendChild(productDiv);
 
             const heartIcon = productDiv.querySelector('.heart-icon');
+            const shopNowButton = productDiv.querySelector('.shop-now-button');
+
             heartIcon.addEventListener('click', function(event) {
                 event.stopPropagation();
                 heartIcon.classList.toggle('fas');
@@ -218,8 +80,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            productDiv.addEventListener('click', () => {
-                window.location.href = "bagScreen/bagScreen.html";
+            shopNowButton.addEventListener('click', function(event) {
+                event.stopPropagation(); // İçeriğe yönlendirme işlemini engellemek için
+                cartProducts.push({ ...product, quantity: 1 }); // Ürünü sepete ekle ve başlangıç miktarını 1 olarak ayarla
+                console.log(`Ürünü sepete eklediniz: ${product.title}`);
+            });
+
+            productDiv.addEventListener('click', function() {
+                const texts = productDiv.querySelector('.texts');
+                texts.classList.toggle('open');
+
+                if (product.img === 'images/bagzz-images/red.png') {
+                    window.location.href = 'bagScreen/bagScreen.html';
+                }
             });
         });
     }
@@ -250,27 +123,36 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = "searchScreen/search.html"; 
     });
 
-    document.getElementById("heart-button").addEventListener("click", function() {
+    document.getElementById("heart-button").addEventListener("click", function() {  
         showLikedProductsModal();
     });
 
     document.getElementById("shopping-button").addEventListener("click", function() {
-        window.location.href = "shoppingScreen/shopping.html";
+        showCartProductsModal(); // Sepet ürünlerini modal penceresinde göster
     });
 
     // Modal kapatma işlevleri
-    const modal = document.getElementById("likedProductsModal");
-    const span = document.getElementsByClassName("close")[0];
+    const likedProductsModal = document.getElementById("likedProductsModal");
+    const cartProductsModal = document.getElementById("cartProductsModal");
+    const likedProductsClose = likedProductsModal.querySelector(".close");
+    const cartProductsClose = cartProductsModal.querySelector(".close");
 
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
+    likedProductsClose.onclick = function() {
+        likedProductsModal.style.display = "none";
+    };
+
+    cartProductsClose.onclick = function() {
+        cartProductsModal.style.display = "none";
+    };
 
     window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
+        if (event.target == likedProductsModal) {
+            likedProductsModal.style.display = "none";
         }
-    }
+        if (event.target == cartProductsModal) {
+            cartProductsModal.style.display = "none";
+        }
+    };
 });
 
 function showLikedProductsModal() {
@@ -300,83 +182,65 @@ function showLikedProductsModal() {
     modal.style.display = "block";
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     const menuToggle = document.querySelector('.menu-toggle');
-//     const menu = document.querySelector('.menu');
-//     const menuClose = document.querySelector('.menu-close');
-
-//     menuToggle.addEventListener('click', function() {
-//         menu.classList.toggle('active');
-//     });
-
-//     menuClose.addEventListener('click', function() {
-//         menu.classList.remove('active');
-//     });
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function showCartProductsModal() {
+    const modal = document.getElementById("cartProductsModal");
+    const cartProductsContainer = document.getElementById("cartProductsContainer");
+
+    cartProductsContainer.innerHTML = ''; // Önceki öğeleri temizle
+
+    cartProducts.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.className = 'card';
+
+        productDiv.innerHTML = `
+            <div class="card-inner">
+                <div class="red-bag">
+                    <img src="${product.img}" alt="${product.title}">
+                </div>
+                <div class="delete-right">
+                    <i class="delete-icon fas fa-times"></i>
+                </div>
+            </div>
+            <div class="texts">
+                <p class="title">${product.title}</p>
+                <div class="quantity-control">
+                    <button class="quantity-button decrease">-</button>
+                    <span class="quantity">${product.quantity}</span>
+                    <button class="quantity-button increase">+</button>
+                </div>
+            </div>
+        `;
+
+        const decreaseButton = productDiv.querySelector('.quantity-button.decrease');
+        const increaseButton = productDiv.querySelector('.quantity-button.increase');
+        const quantitySpan = productDiv.querySelector('.quantity');
+        const deleteIcon = productDiv.querySelector('.delete-icon');
+
+        decreaseButton.addEventListener('click', function() {
+            if (product.quantity > 1) {
+                product.quantity -= 1;
+                quantitySpan.textContent = product.quantity;
+                console.log(`Ürün miktarı azaltıldı: ${product.title}, Yeni Miktar: ${product.quantity}`);
+            }
+        });
+
+        increaseButton.addEventListener('click', function() {
+            product.quantity += 1;
+            quantitySpan.textContent = product.quantity;
+            console.log(`Ürün miktarı artırıldı: ${product.title}, Yeni Miktar: ${product.quantity}`);
+        });
+
+        deleteIcon.addEventListener('click', function() {
+            cartProducts = cartProducts.filter(p => p.id !== product.id);
+            showCartProductsModal(); // Sepet modülünü yeniden göster
+            console.log(`Ürün sepetten çıkarıldı: ${product.title}`);
+        });
+
+        cartProductsContainer.appendChild(productDiv);
+    });
+
+    modal.style.display = "block";
+}
 
 
 

@@ -23,7 +23,6 @@
 	<title>Bagzz</title>
 	<script src="index.js" type="text/Javascript"></script>
 </head>
-
 <body>
 	<div class="container">
 		<div class="nav">
@@ -88,21 +87,32 @@
 			<button class="menu-item" id="shopping-button"><i class="fas fa-shopping-basket"></i></button>
 			<div id="likedProductsList" class="cards"></div>
 		</div>
-
-		<!-- Modal for liked products -->
 		<div id="likedProductsModal" class="modal">
 			<div class="modal-content">
 				<span class="close">&times;</span>
-				<h2 class="liked-products">Liked Products</h2>
+				<h2 class="liked-products">LİKED PRODUCTS</h2>
 				<div id="likedProductsContainer" class="cards"></div>
+			</div>
+		</div>
+
+		<div id="cartProductsModal" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h2 class="cart-products"> SHOPPING BASKET</h2>
+				<div id="cartProductsContainer" class="cards"></div>
 			</div>
 		</div>
 
 		<div id="productList" class="cards"></div>
 		<div id="likedProductsList" class="cards"></div>
+
+		<div class="overlay" id="overlay"></div>
+<div class="cart-modal" id="cartModal">
+    <div id="cartProductsContainer"></div>
+    <button id="closeCartButton">Close</button>
+</div>
 	</div>
 
-	
 </body>
 
 </html>
